@@ -42,28 +42,7 @@ resource "aws_iam_role" "cluster" {
             "eks.amazonaws.com"
             ]
         },
-        "Action": [
-               "ec2:*",
-               "eks:*",
-               "elasticloadbalancing:*",
-               "autoscaling:*",
-               "cloudwatch:*",
-               "logs:*",
-               "kms:DescribeKey",
-               "iam:AddRoleToInstanceProfile",
-               "iam:AttachRolePolicy",
-               "iam:CreateInstanceProfile",
-               "iam:CreateRole",
-               "iam:CreateServiceLinkedRole",
-               "iam:GetRole",
-               "iam:ListAttachedRolePolicies",
-               "iam:ListRolePolicies",
-               "iam:ListRoles",
-               "iam:PassRole",
-               "iam:DetachRolePolicy",
-               "iam:ListInstanceProfilesForRole",
-               "iam:DeleteRole"
-           ],
+         "Action": "sts:AssumeRole"
       }
     ]
 }
